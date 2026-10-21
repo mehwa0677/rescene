@@ -303,7 +303,22 @@ em { font-style: italic; }
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
   gap: clamp(40px, 6vw, 100px); align-items: center;
 }
-.member-photo { aspect-ratio: 4 / 5; }
+.member-photo { aspect-ratio: 4 / 5; display: block; width: 100%; padding: 0; border: 0; cursor: pointer; font: inherit; }
+.member-photo:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+/* 캐릭터 이미지 — 사진을 클릭하면 서서히 바뀜 */
+.member-photo .ph-media, .char-media { transition: opacity .6s var(--ease-out); }
+.char-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+.member-photo.is-char .ph-media { opacity: 0; }
+.member-photo.is-char .char-media { opacity: 1; }
+.member-photo.is-char.char-missing::after { display: block; }   /* 캐릭터 이미지가 없으면 라벨 표시 */
+.photo-hint {
+  position: absolute; right: 16px; top: 16px; z-index: 1;
+  padding: 8px 12px; border-radius: 999px;
+  background: rgba(255, 255, 255, .85); color: var(--accent);
+  font: 500 11px/1 var(--f-sans); letter-spacing: .16em;
+  transition: background .3s, color .3s;
+}
+.member-photo:hover .photo-hint { background: var(--accent); color: #fff; }
 .member-info { display: flex; flex-direction: column; gap: 28px; }
 .member-name { margin: 0; font-size: clamp(64px, 9vw, 140px); line-height: .95; font-weight: 400; letter-spacing: -.02em; }
 .member-line { margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.7; color: var(--ink-soft); word-break: keep-all; }
