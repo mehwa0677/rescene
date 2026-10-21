@@ -8,6 +8,13 @@ const MEMBERS = [
     id: 'woni',
     name: 'WONI',
     photo: 'images/profile-01.jpg',
+    // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
+    character: {
+      photo: 'images/cha-01.jpg',
+      name: '[캐릭터 이름]',
+      hashtag: '[#해쉬태그 #해쉬태그]',
+      intro: '[캐릭터 소개]'
+    },
     line: '리센느리더. 섹시를 추구하는 귀요미, 맞언니',
     realName: '[정원이 (Jeong Won-i)]',
     birth: '[2004년 05월 25일 · 거제]',
@@ -19,6 +26,13 @@ const MEMBERS = [
     id: 'minami',
     name: 'MINAMI',
     photo: 'images/profile-02.jpg',
+    // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
+    character: {
+      photo: 'images/cha-02.jpg',
+      name: '[캐릭터 이름]',
+      hashtag: '[#해쉬태그 #해쉬태그]',
+      intro: '[캐릭터 소개]'
+    },
     line: '진짜 갸루는 아님, 팔방미인 오죠사마',
     realName: '[이토 미나미 (Ito Minami)]',
     birth: '[2006년 11월 29일 · 일본 치바현]',
@@ -30,6 +44,13 @@ const MEMBERS = [
     id: 'liv',
     name: 'LIV',
     photo: 'images/profile-03.jpg',
+    // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
+    character: {
+      photo: 'images/cha-03.jpg',
+      name: '[캐릭터 이름]',
+      hashtag: '[#해쉬태그 #해쉬태그]',
+      intro: '[캐릭터 소개]'
+    },
     line: '노래 잘하는 개그맨, 메이랑 환장의 짝궁',
     realName: '[진경은 (Jin Kyung-eun)]',
     birth: '[2006년 10월 11일 · 수원]',
@@ -41,6 +62,13 @@ const MEMBERS = [
     id: 'may',
     name: 'MAY',
     photo: 'images/profile-04.jpg',
+    // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
+    character: {
+      photo: 'images/cha-04.jpg',
+      name: '[캐릭터 이름]',
+      hashtag: '[#해쉬태그 #해쉬태그]',
+      intro: '[캐릭터 소개]'
+    },
     line: '리브와 환장의 짝궁, 쫑알쫑알 메라디오DJ',
     realName: '[이예빈 (Lee Ye-vin)]',
     birth: '[2008년 08월 19일 · 고양]',
@@ -52,6 +80,13 @@ const MEMBERS = [
     id: 'zena',
     name: 'ZENA',
     photo: 'images/profile-05.jpg',
+    // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
+    character: {
+      photo: 'images/cha-05.jpg',
+      name: '[캐릭터 이름]',
+      hashtag: '[#해쉬태그 #해쉬태그]',
+      intro: '[캐릭터 소개]'
+    },
     line: '하루 한번 세상이 무너지는, 으른이고 싶은, 까엉TV의 DJ',
     realName: '[김가영(Kim Ga-yeong]',
     birth: '[2008년 11월 27일 · 경주]',

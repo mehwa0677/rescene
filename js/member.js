@@ -29,6 +29,32 @@
   setHTML('#pIntro', m.intro);
   setHTML('#pCatchphrase', m.catchphrase);
 
+  // 캐릭터 — 사진을 클릭하면 캐릭터 이미지 · 표로 바뀌고, 다시 클릭하면 원래대로
+  const c = m.character || {};
+  const box = document.querySelector('#memberPhotoBox');
+  const charImg = document.querySelector('#charPhoto');
+  const profileTable = document.querySelector('#profileTable');
+  const charTable = document.querySelector('#charTable');
+  const hint = document.querySelector('#photoHint');
+  charImg.alt = `${m.name} 캐릭터`;
+  const missing = () => { charImg.remove(); box.classList.add('char-missing'); };   // 이미지가 없으면 플레이스홀더 표시
+  charImg.addEventListener('error', missing);
+  if (c.photo) charImg.src = c.photo; else missing();
+  setHTML('#cName', c.name || '');
+  setHTML('#cHashtag', c.hashtag || '');
+  setHTML('#cIntro', c.intro || '');
+
+  box.addEventListener('click', () => {
+    const on = !box.classList.contains('is-char');
+    box.classList.toggle('is-char', on);
+    box.setAttribute('aria-pressed', String(on));
+    box.setAttribute('aria-label', on ? '프로필 사진 보기' : '캐릭터 보기');
+    box.dataset.label = on ? `${m.name} · CHARACTER` : `${m.name} · 4:5`;
+    hint.textContent = on ? 'CLICK · PROFILE' : 'CLICK · CHARACTER';
+    profileTable.hidden = on;
+    charTable.hidden = !on;
+  });
+
   // 이전 · 다음 멤버
   const prev = MEMBERS[(index - 1 + total) % total];
   const next = MEMBERS[(index + 1) % total];
