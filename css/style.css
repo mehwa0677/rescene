@@ -321,6 +321,7 @@ em { font-style: italic; }
 .member-photo:hover .photo-hint { background: var(--accent); color: #fff; }
 .member-info { display: flex; flex-direction: column; gap: 28px; }
 .member-name { margin: 0; font-size: clamp(64px, 9vw, 140px); line-height: .95; font-weight: 400; letter-spacing: -.02em; }
+.member-detail:has(.is-char) .member-name { font-size: clamp(40px, 6vw, 96px); }   /* 캐릭터 이름 크기 */
 .member-line { margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.7; color: var(--ink-soft); word-break: keep-all; }
 .member-facts { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0 32px; border-top: 1px solid var(--line); }
 .member-facts > div { padding: 18px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
