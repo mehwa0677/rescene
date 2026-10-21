@@ -53,6 +53,9 @@
     hint.textContent = on ? 'CLICK · PROFILE' : 'CLICK · CHARACTER';
     profileTable.hidden = on;
     charTable.hidden = !on;
+    // 큰 이름 · 한 줄 설명도 캐릭터 것으로 (members.js 의 character.title / character.line, 비워두면 멤버 것 유지)
+    set('#memberName', on ? (c.title || m.name) : m.name);
+    setHTML('#memberLine', on ? (c.line || m.line) : m.line);
   });
 
   // 이전 · 다음 멤버
