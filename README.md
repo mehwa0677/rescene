@@ -1,4 +1,4 @@
-# [BRAND] 홍보 웹사이트
+# [RESCENE] 홍보 웹사이트
 
 정적 HTML/CSS/JS 사이트입니다. 빌드 과정 없이 GitHub Pages에 바로 올릴 수 있습니다.
 
