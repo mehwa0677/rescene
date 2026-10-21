@@ -10,7 +10,7 @@ const MEMBERS = [
     photo: 'images/profile-01.jpg',
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
-      title: '조타(Jota)',                      // ← 추가: 크게 보이는 이름
+      title: 'Jota',                      // ← 추가: 크게 보이는 이름
       line: '무표정의 대왕 고양이',        // ← 추가: 이름 아래 한 줄 설명
       photo: 'images/cha-01.jpg',
       name: '조타(Jota)',
@@ -30,7 +30,7 @@ const MEMBERS = [
     photo: 'images/profile-02.jpg',
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
-      title: '밍(Ming)',                      // ← 추가: 크게 보이는 이름
+      title: 'Ming',                      // ← 추가: 크게 보이는 이름
       line: '포근한 포옹을 사랑하는 바다 표범',        // ← 추가: 이름 아래 한 줄 설명
       photo: 'images/cha-02.jpg',
       name: '밍(Ming)',
@@ -50,7 +50,7 @@ const MEMBERS = [
     photo: 'images/profile-03.jpg',
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
-      title: '리뿌(Ribbu)',                      // ← 추가: 크게 보이는 이름
+      title: 'Ribbu',                      // ← 추가: 크게 보이는 이름
       line: '복슬복슬한 걸 좋아하는 햄스터',        // ← 추가: 이름 아래 한 줄 설명
       photo: 'images/cha-03.jpg',
       name: '리뿌(Ribbu)',
@@ -70,7 +70,7 @@ const MEMBERS = [
     photo: 'images/profile-04.jpg',
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
-      title: '얌(Yam)',                      // ← 추가: 크게 보이는 이름
+      title: 'Yam',                      // ← 추가: 크게 보이는 이름
       line: '향기를 탐구하는 마법 코끼리',        // ← 추가: 이름 아래 한 줄 설명
       photo: 'images/cha-04.jpg',
       name: '얌(Yam)',
@@ -90,7 +90,7 @@ const MEMBERS = [
     photo: 'images/profile-05.jpg',
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
-      title: '쩨로밍(Zzeroming)',                      // ← 추가: 크게 보이는 이름
+      title: 'Zzeroming',                      // ← 추가: 크게 보이는 이름
       line: '공감 능력이 극대화 된 신비로운 색의 다람쥐',        // ← 추가: 이름 아래 한 줄 설명
       photo: 'images/cha-05.jpg',
       name: '쩨로밍(Zzeroming)',
