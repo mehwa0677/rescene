@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400;1,6..96,700&family=Noto+Serif+KR:wght@300;400;500;700&family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
 </head>
 <body>
 
@@ -44,9 +44,12 @@
     <a href="index.html#collection" class="back-link fade">← 멤버 전체 보기</a>
 
     <section class="member-detail">
-      <div class="ph hero-img member-photo" id="memberPhotoBox" data-label="Member · 4:5">
+      <!-- 사진을 클릭하면 캐릭터 이미지로 바뀝니다 (다시 클릭하면 원래 사진) -->
+      <button type="button" class="ph hero-img member-photo" id="memberPhotoBox" data-label="Member · 4:5" aria-pressed="false" aria-label="캐릭터 보기">
         <img class="ph-media" id="memberPhoto" src="" alt="">
-      </div>
+        <img class="char-media" id="charPhoto" src="" alt="">
+        <span class="photo-hint" id="photoHint">CLICK · CHARACTER</span>
+      </button>
 
       <div class="member-info">
         <p class="eyebrow fade" id="memberCount">MEMBER</p>
@@ -57,7 +60,7 @@
         <span class="rule fade"></span>
 
         <!-- 프로필 표 — 내용은 js/members.js 에서 수정 -->
-        <table class="profile-table fade-2">
+        <table class="profile-table fade-2" id="profileTable">
           <caption class="sr-only">멤버 프로필</caption>
           <tbody>
             <tr><th scope="row">본명</th><td id="pRealName"></td></tr>
@@ -65,6 +68,16 @@
             <tr><th scope="row">MBTI</th><td id="pMbti"></td></tr>
             <tr><th scope="row">소개</th><td id="pIntro"></td></tr>
             <tr><th scope="row">유행어</th><td id="pCatchphrase"></td></tr>
+          </tbody>
+        </table>
+
+        <!-- 캐릭터 표 — 사진을 클릭하면 프로필 표 대신 보입니다 (내용은 js/members.js 에서 수정) -->
+        <table class="profile-table char-table" id="charTable" hidden>
+          <caption class="sr-only">캐릭터 소개</caption>
+          <tbody>
+            <tr><th scope="row">이름</th><td id="cName"></td></tr>
+            <tr><th scope="row">해쉬태그</th><td id="cHashtag"></td></tr>
+            <tr><th scope="row">소개</th><td id="cIntro"></td></tr>
           </tbody>
         </table>
       </div>
@@ -96,8 +109,8 @@
     </div>
   </footer>
 
-  <script src="js/members.js?v=9"></script>
-  <script src="js/member.js?v=9"></script>
+  <script src="js/members.js?v=10"></script>
+  <script src="js/member.js?v=10"></script>
   <script src="js/main.js?v=10"></script>
 </body>
 </html>
