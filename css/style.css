@@ -473,6 +473,8 @@ html.lp-lock { overflow: hidden; }
   transform: translateX(100%); visibility: hidden;
   transition: transform .7s var(--ease-io), visibility 0s linear .7s, box-shadow .7s; outline: none;
 }
+/* 곡이 많아 패널이 길어져도 커버·LP 영역이 줄어들지 않게 (줄어들면 커버가 앨범 제목을 덮음) */
+.lp-panel > * { flex-shrink: 0; }
 .lp.is-open .lp-panel { transform: none; visibility: visible; transition: transform .7s var(--ease-io), visibility 0s, box-shadow .7s; box-shadow: -24px 0 60px -30px rgba(214, 51, 108, .45); }
 .lp-close {
   align-self: flex-end; width: 44px; height: 44px; display: grid; place-items: center;
