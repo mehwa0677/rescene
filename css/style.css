@@ -676,6 +676,7 @@ html.lp-lock { overflow: hidden; }
 .gb-submit:disabled { opacity: .6; cursor: wait; }
 .gb-note { margin: 0; font-size: 12px; color: var(--muted); min-height: 1em; }
 .gb-note.is-error { color: var(--accent); }
+.gb-rules { margin: 0; font-size: 12px; line-height: 1.6; color: var(--muted); word-break: keep-all; }
 
 .gb-board { border: 1px solid var(--line); border-radius: 20px; background: var(--ground-2); overflow: hidden; }
 .gb-head {
