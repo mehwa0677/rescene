@@ -602,6 +602,43 @@ html.lp-lock { overflow: hidden; }
   transition: transform .4s var(--ease-out);
 }
 .nav-goods:hover .nav-icon { transform: translateY(-2px) rotate(-8deg); }
+.nav-goods { background: none; border: 0; color: inherit; font-family: inherit; cursor: pointer; }
+
+/* GOODS 드롭다운 (안원잘부 / 위드뮤) */
+.nav-dropdown { position: relative; }
+.nav-submenu {
+  position: absolute; top: 100%; left: 50%; min-width: 140px;
+  display: flex; flex-direction: column; padding: 8px 0;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .08);
+  opacity: 0; visibility: hidden; transform: translate(-50%, -6px);
+  transition: opacity .3s, transform .3s var(--ease-out), visibility .3s;
+}
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu,
+.nav-dropdown.is-open .nav-submenu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.nav-dropdown:hover .nav-goods .nav-icon,
+.nav-dropdown.is-open .nav-goods .nav-icon { transform: translateY(-2px) rotate(-8deg); }
+.nav-subitem {
+  padding: 10px 20px; font-size: 14px; letter-spacing: .04em; white-space: nowrap; text-align: center;
+  transition: color .3s, background .3s;
+}
+.nav-subitem:hover { color: var(--accent); background: rgba(0, 0, 0, .03); }
+
+@media (max-width: 860px) {
+  /* 모바일 메뉴에서는 하위 메뉴를 항상 펼쳐서 표시 */
+  .nav-submenu {
+    position: static; min-width: 0; padding: 4px 0 0 26px;
+    background: none; border: 0; border-radius: 0; box-shadow: none;
+    opacity: 1; visibility: visible; transform: none;
+  }
+  .nav-dropdown:hover .nav-submenu,
+  .nav-dropdown:focus-within .nav-submenu,
+  .nav-dropdown.is-open .nav-submenu { transform: none; }
+  .nav-goods { cursor: default; }
+  .nav-subitem { padding: 6px 0; font-size: 16px; text-align: left; }
+  .nav-subitem:hover { background: none; }
+}
 
 /* =========================================================
    GUESTBOOK (방명록) — js/guestbook.js
