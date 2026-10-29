@@ -143,6 +143,22 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 if (!reduceMotion) updateParallax();
 
+/* GOODS 드롭다운: 터치 기기는 hover가 없으므로 탭으로 열고 닫기 */
+document.querySelectorAll('.nav-dropdown').forEach((dd) => {
+  const btn = dd.querySelector('.nav-goods');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = dd.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+});
+document.addEventListener('click', () => {
+  document.querySelectorAll('.nav-dropdown.is-open').forEach((dd) => {
+    dd.classList.remove('is-open');
+    dd.querySelector('.nav-goods').setAttribute('aria-expanded', 'false');
+  });
+});
+
 /* 5. 모바일 메뉴 */
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.getElementById('menu');
