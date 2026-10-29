@@ -48,7 +48,7 @@ const ALBUMS = [
   // 06. 남주의 첫날밤을 가져버렸다 OST《밤밤밤》
   {
     tracks: [
-      { title: '[밤밤밤]', src: 'music/album-06-01.mp3' }
+      { title: '[밤밤밤]', src: 'music/album-06-01.mp3', mv: 'https://youtu.be/AfiBC_VR2K4' }
     ]
   },
   // 07. 싱글2집《Dearest》
@@ -61,7 +61,7 @@ const ALBUMS = [
   // 08. 첫사랑 엔딩 OST《고백주파수》
   {
     tracks: [
-      { title: '[고백주파수]', src: 'music/album-08-01.mp3' }
+      { title: '[고백주파수]', src: 'music/album-08-01.mp3', mv: 'https://youtu.be/p1asr5bLsl0' }
     ]
   },
   // 09. 선공개 싱글《Heart Drop》
