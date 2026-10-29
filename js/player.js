@@ -141,6 +141,18 @@
       btn.querySelector('.lp-track-title').innerHTML = clean(t.title);
       btn.addEventListener('click', () => play(viewAlbum, j));
       li.appendChild(btn);
+      // 뮤직비디오가 있는 곡만 오른쪽에 MV 버튼 (유튜브 새 탭, 사이트 음악은 일시정지)
+      if (t.mv) {
+        const mv = document.createElement('a');
+        mv.className = 'lp-mv';
+        mv.href = t.mv;
+        mv.target = '_blank';
+        mv.rel = 'noopener';
+        mv.setAttribute('aria-label', `${clean(t.title)} 뮤직비디오 보기 (YouTube, 새 탭)`);
+        mv.innerHTML = `${icon.play}<span>MV</span>`;
+        mv.addEventListener('click', () => audio.pause());
+        li.appendChild(mv);
+      }
       tracksEl.appendChild(li);
     });
   }
