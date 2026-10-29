@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400;1,6..96,700&family=Noto+Serif+KR:wght@300;400;500;700&family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <!-- 대문: 사이트에 처음 들어올 때 + 새로고침할 때마다 표시
        (멤버·소개 페이지에서 메인으로 돌아올 때는 건너뜀) -->
   <script>
@@ -66,10 +66,16 @@
         <a class="navlink" href="#collection">SCENTS</a>
         <a class="navlink" href="#craft">ALBUM</a>
         <a class="navlink" href="#contact">OFFICIAL</a>
-        <a class="navlink nav-goods" href="https://helloiamwoni.com/index.html" target="_blank" rel="noopener">
-          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
-          GOODS
-        </a>
+        <div class="nav-dropdown">
+          <button class="navlink nav-goods" type="button" aria-haspopup="true" aria-expanded="false">
+            <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+            GOODS
+          </button>
+          <div class="nav-submenu">
+            <a class="nav-subitem" href="https://helloiamwoni.com/index.html" target="_blank" rel="noopener">안원잘부</a>
+            <a class="nav-subitem" href="https://www.withmuu.com/" target="_blank" rel="noopener">위드뮤</a>
+          </div>
+        </div>
         <a href="https://themuze.kr/" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">더뮤즈</a>
       </div>
     </nav>
@@ -475,7 +481,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=12"></script>
+  <script src="js/main.js?v=13"></script>
   <!-- 앨범 수록곡 · LP 플레이어 -->
   <script src="js/albums.js?v=11"></script>
   <script src="js/player.js?v=11"></script>
