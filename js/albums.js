@@ -106,8 +106,11 @@ const ALBUMS = [
   // 15. 미니 4집《PULSE》
   {
     tracks: [
-      { title: '[미공개]', src: 'music/album-15-01.mp3' },
-      { title: '[미공개]', src: 'music/album-15-02.mp3' }
+      { title: '[FINEST THING]', src: 'music/album-15-01.mp3' },
+      { title: '[WITH]', src: 'music/album-15-02.mp3' },
+      { title: '[백화요란(Inside Out)]', src: 'music/album-15-03.mp3' },
+      { title: '[MEME]', src: 'music/album-15-04.mp3' },
+      { title: '[DRAGON]', src: 'music/album-15-05.mp3' }
     ]
   },
   // 16. NEXT...
