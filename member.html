@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Serif+KR:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=22">
+  <link rel="stylesheet" href="css/style.css?v=23">
 </head>
 <body>
 
@@ -63,11 +63,15 @@
 
     <section class="member-detail">
       <!-- 사진을 클릭하면 캐릭터 이미지로 바뀝니다 (다시 클릭하면 원래 사진) -->
-      <button type="button" class="ph hero-img member-photo" id="memberPhotoBox" data-label="Member · 4:5" aria-pressed="false" aria-label="캐릭터 보기">
-        <img class="ph-media" id="memberPhoto" src="" alt="">
-        <img class="char-media" id="charPhoto" src="" alt="">
-        <span class="photo-hint" id="photoHint">CLICK · CHARACTER</span>
-      </button>
+      <div class="member-visual">
+        <button type="button" class="ph hero-img member-photo" id="memberPhotoBox" data-label="Member · 4:5" aria-pressed="false" aria-label="캐릭터 보기">
+          <img class="ph-media" id="memberPhoto" src="" alt="">
+          <img class="char-media" id="charPhoto" src="" alt="">
+          <span class="photo-hint" id="photoHint">CLICK · CHARACTER</span>
+        </button>
+        <!-- 썸네일 — 사진 목록은 js/members.js 의 gallery 에서 수정 (없으면 자동으로 숨김) -->
+        <div class="member-thumbs" id="memberThumbs" role="group" aria-label="사진 더 보기" hidden></div>
+      </div>
 
       <div class="member-info">
         <p class="eyebrow fade" id="memberCount">MEMBER</p>
@@ -127,8 +131,8 @@
     </div>
   </footer>
 
-  <script src="js/members.js?v=11"></script>
-  <script src="js/member.js?v=11"></script>
+  <script src="js/members.js?v=12"></script>
+  <script src="js/member.js?v=12"></script>
   <script src="js/main.js?v=11"></script>
 </body>
 </html>

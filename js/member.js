@@ -44,8 +44,7 @@
   setHTML('#cHashtag', c.hashtag || '');
   setHTML('#cIntro', c.intro || '');
 
-  box.addEventListener('click', () => {
-    const on = !box.classList.contains('is-char');
+  function setChar(on) {
     box.classList.toggle('is-char', on);
     box.setAttribute('aria-pressed', String(on));
     box.setAttribute('aria-label', on ? '프로필 사진 보기' : '캐릭터 보기');
@@ -56,7 +55,47 @@
     // 큰 이름 · 한 줄 설명도 캐릭터 것으로 (members.js 의 character.title / character.line, 비워두면 멤버 것 유지)
     set('#memberName', on ? (c.title || m.name) : m.name);
     setHTML('#memberLine', on ? (c.line || m.line) : m.line);
-  });
+  }
+  box.addEventListener('click', () => setChar(!box.classList.contains('is-char')));
+
+  // 썸네일 — 프로필 사진 + members.js 의 gallery. 누르면 큰 사진이 그 사진으로 바뀜
+  // (캐릭터를 보고 있을 때 누르면 사진으로 돌아옴. 큰 사진 클릭 = 캐릭터 전환은 그대로)
+  const thumbsEl = document.querySelector('#memberThumbs');
+  const shots = [m.photo, ...(Array.isArray(m.gallery) ? m.gallery : [])].filter(Boolean);
+  if (thumbsEl && shots.length > 1) {
+    let current = 0;
+    const thumbs = shots.map((src, i) => {
+      const t = document.createElement('button');
+      t.type = 'button';
+      t.className = 'member-thumb';
+      t.setAttribute('aria-label', `${m.name} 사진 ${i + 1} / ${shots.length}`);
+      t.setAttribute('aria-pressed', String(i === 0));
+      const ti = document.createElement('img');
+      ti.src = src; ti.alt = ''; ti.loading = 'lazy'; ti.decoding = 'async';
+      ti.addEventListener('error', () => { t.hidden = true; });     // 파일이 없으면 그 칸만 숨김
+      t.appendChild(ti);
+      t.addEventListener('click', () => show(i));
+      thumbsEl.appendChild(t);
+      return t;
+    });
+    thumbsEl.hidden = false;
+
+    function show(i) {
+      if (box.classList.contains('is-char')) setChar(false);
+      if (i === current) return;
+      current = i;
+      thumbs.forEach((t, k) => t.setAttribute('aria-pressed', String(k === i)));
+      thumbs[i].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+      img.classList.add('is-swapping');                              // 살짝 흐려졌다가 새 사진으로
+      const next = new Image();
+      next.onload = next.onerror = () => {
+        img.src = shots[i];
+        img.alt = `${m.name} 사진 ${i + 1}`;
+        requestAnimationFrame(() => img.classList.remove('is-swapping'));
+      };
+      next.src = shots[i];
+    }
+  }
 
   // 이전 · 다음 멤버
   const prev = MEMBERS[(index - 1 + total) % total];
