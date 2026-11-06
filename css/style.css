@@ -826,3 +826,33 @@ strong, b { font-weight: 600; }
 .footer .footer-label { color: #8EA2C0; }
 .footer .logo-img { filter: brightness(0) invert(1) opacity(.92); }
 .footer .logo-text { color: #F3F6FA; }
+
+/* =========================================================
+   멤버 사진 썸네일 (member.html) — js/member.js · js/members.js 의 gallery
+   ========================================================= */
+.member-visual { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.member-thumbs {
+  --gap: 12px;
+  display: flex; gap: var(--gap); overflow-x: auto; padding: 4px 2px 6px;   /* 6장 넘으면 옆으로 넘김 */
+  scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--accent-soft) transparent;
+}
+.member-thumbs[hidden] { display: none; }
+.member-thumb {
+  flex: 0 0 calc((100% - var(--gap) * 5) / 6); min-width: 52px; aspect-ratio: 1 / 1;
+  position: relative; padding: 0; border: 0; border-radius: 4px; overflow: hidden; cursor: pointer;
+  background: var(--placeholder); scroll-snap-align: start;
+  opacity: .55; transition: opacity .35s, transform .35s var(--ease-out), box-shadow .35s;
+}
+.member-thumb[hidden] { display: none; }
+.member-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.member-thumb:hover { opacity: .9; transform: translateY(-2px); }
+.member-thumb[aria-pressed="true"] { opacity: 1; box-shadow: 0 0 0 2px var(--ground), 0 0 0 3px var(--accent); }
+.member-thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; opacity: 1; }
+.member-photo .ph-media.is-swapping { opacity: .12; transition-duration: .22s; }
+/* 캐릭터를 보고 있을 때는 썸네일 선택 표시를 흐리게 (누르면 사진으로 돌아옴) */
+.member-visual:has(.is-char) .member-thumb[aria-pressed="true"] { opacity: .7; box-shadow: none; }
+/* 노트북(1440×900 등)에서 큰 사진이 화면을 다 차지해 썸네일이 아래로 밀리지 않도록,
+   썸네일이 있을 때만 사진+썸네일이 한 화면에 들어오게 폭을 제한 */
+@media (min-width: 861px) {
+  .member-visual:has(.member-thumbs:not([hidden])) { width: min(100%, calc((100svh - 220px) / 1.42)); justify-self: center; align-self: start; }
+}
