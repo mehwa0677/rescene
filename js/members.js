@@ -6,10 +6,14 @@
    📷 사진 더 보기 (gallery)
    · 큰 사진 아래 썸네일로 보이고, 누르면 큰 사진이 그 사진으로 바뀝니다.
    · 첫 번째 썸네일은 항상 프로필 사진(photo)이라 따로 적지 않아도 됩니다.
-   · 사진은 images/gallery/ 폴더에 올리고, 아래처럼 파일 경로를 쉼표로 이어 적으세요.
-       gallery: ['images/gallery/woni-01.jpg', 'images/gallery/woni-02.jpg'],
+   · 사진은 images/ 폴더에 올리고, 아래처럼 파일 경로를 쉼표로 이어 적으세요.
+       gallery: ['images/woni-01.jpg', 'images/woni-02.jpg'],
    · 비워두면 [] 썸네일 줄이 나타나지 않습니다. 파일이 없거나 이름이 틀리면 그 칸만 숨겨집니다.
    · 사진은 긴 쪽 1600px 이하로 줄여서 올려주세요 (장당 300KB 안팎).
+   · 가로로 긴 사진은 세로 틀에 맞춰 가운데만 보입니다. 얼굴이 잘리면 보여줄 위치를 적어주세요.
+       { src: 'images/minami-02.jpg', pos: '0% 50%' }
+       pos 는 '가로% 세로%' — 가로 0% = 왼쪽 끝, 50% = 가운데, 100% = 오른쪽 끝
+                             세로 0% = 위쪽 끝, 50% = 가운데, 100% = 아래쪽 끝
    ========================================================= */
 const MEMBERS = [
   {
@@ -37,7 +41,7 @@ const MEMBERS = [
     id: 'minami',
     name: 'MINAMI',
     photo: 'images/profile-02.jpg',
-    gallery: ['images/minami-01.jpg', {src:'images/minami-02.jpg',pos:'30%,50%'}, 'images/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/minami-01.jpg', { src: 'images/minami-02.jpg', pos: '0% 50%' }, 'images/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ming',                      // ← 추가: 크게 보이는 이름
