@@ -62,7 +62,7 @@ const MEMBERS = [
     id: 'liv',
     name: 'LIV',
     photo: 'images/profile-03.jpg',
-    gallery: ['images/liv-01.jpg', 'images/riv-02.jpg', 'images/riv-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/liv-01.jpg', 'images/liv-02.jpg', 'images/liv-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ribbu',                      // ← 추가: 크게 보이는 이름
