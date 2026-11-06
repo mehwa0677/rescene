@@ -798,3 +798,12 @@ strong, b { font-weight: 600; }
 .lp-mini { background: rgba(250, 251, 252, .9); }
 /* 대문 사운드 버튼 — 밝은 영상 위에서도 보이도록 */
 .intro-sound { background: rgba(35, 44, 53, .28); border-color: rgba(255, 255, 255, .7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+/* 밝은 화보(흰 의상·푸른 안개)가 배경에 녹아 경계가 사라지지 않도록 얇은 테두리 */
+.hero-img, .story > .ph, .card .ph, .member-photo, .about-photo, .gallery-grid figure { outline: 1px solid rgba(84, 108, 132, .12); outline-offset: -1px; }
+/* 인용문 — 밝은 레이스·흰 배경 위에서도 글자가 읽히도록 가운데를 한 겹 더 어둡게 */
+.quote-shade {
+  background:
+    radial-gradient(70% 55% at 50% 50%, rgba(30, 38, 47, .38), transparent 75%),
+    linear-gradient(180deg, rgba(210, 222, 232, .22), rgba(35, 44, 53, .62));
+}
+.quote blockquote p { text-shadow: 0 2px 24px rgba(20, 26, 33, .35); }
