@@ -64,7 +64,7 @@
   // gallery 항목은 '경로' 또는 { src: '경로', pos: '보여줄 위치' } 둘 다 가능
   const shots = [m.photo, ...(Array.isArray(m.gallery) ? m.gallery : [])]
     .filter(Boolean)
-    .map((g) => (typeof g === 'string' ? { src: g, pos: '' } : { src: g.src, pos: g.pos || '' }))
+    .map((g) => (typeof g === 'string' ? { src: g, pos: '' } : { src: g.src, pos: String(g.pos || '').replace(/,/g, ' ').trim() }))   // '30%,50%' 처럼 쉼표로 적어도 동작
     .filter((g) => g.src);
   if (thumbsEl && shots.length > 1) {
     let current = 0;

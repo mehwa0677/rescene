@@ -12,8 +12,8 @@
    · 사진은 긴 쪽 1600px 이하로 줄여서 올려주세요 (장당 300KB 안팎).
    · 가로로 긴 사진은 세로 틀에 맞춰 가운데만 보입니다. 얼굴이 잘리면 보여줄 위치를 적어주세요.
        { src: 'images/minami-02.jpg', pos: '0% 50%' }
-       pos 는 '가로% 세로%' — 가로 0% = 왼쪽 끝, 50% = 가운데, 100% = 오른쪽 끝
-                             세로 0% = 위쪽 끝, 50% = 가운데, 100% = 아래쪽 끝
+       pos 는 '가로% 세로%' — 숫자 사이는 쉼표가 아니라 띄어쓰기 한 칸
+       가로 0% = 왼쪽 끝, 50% = 가운데, 100% = 오른쪽 끝 / 세로 0% = 위쪽 끝, 50% = 가운데, 100% = 아래쪽 끝
    ========================================================= */
 const MEMBERS = [
   {
@@ -41,7 +41,7 @@ const MEMBERS = [
     id: 'minami',
     name: 'MINAMI',
     photo: 'images/profile-02.jpg',
-    gallery: ['images/minami-01.jpg', { src: 'images/minami-02.jpg', pos: '0% 50%' }, 'images/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/minami-01.jpg', {src:'images/minami-02.jpg',pos:'30%,50%'}, 'images/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ming',                      // ← 추가: 크게 보이는 이름
