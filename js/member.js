@@ -61,10 +61,14 @@
   // 썸네일 — 프로필 사진 + members.js 의 gallery. 누르면 큰 사진이 그 사진으로 바뀜
   // (캐릭터를 보고 있을 때 누르면 사진으로 돌아옴. 큰 사진 클릭 = 캐릭터 전환은 그대로)
   const thumbsEl = document.querySelector('#memberThumbs');
-  const shots = [m.photo, ...(Array.isArray(m.gallery) ? m.gallery : [])].filter(Boolean);
+  // gallery 항목은 '경로' 또는 { src: '경로', pos: '보여줄 위치' } 둘 다 가능
+  const shots = [m.photo, ...(Array.isArray(m.gallery) ? m.gallery : [])]
+    .filter(Boolean)
+    .map((g) => (typeof g === 'string' ? { src: g, pos: '' } : { src: g.src, pos: g.pos || '' }))
+    .filter((g) => g.src);
   if (thumbsEl && shots.length > 1) {
     let current = 0;
-    const thumbs = shots.map((src, i) => {
+    const thumbs = shots.map(({ src, pos }, i) => {
       const t = document.createElement('button');
       t.type = 'button';
       t.className = 'member-thumb';
@@ -72,6 +76,7 @@
       t.setAttribute('aria-pressed', String(i === 0));
       const ti = document.createElement('img');
       ti.src = src; ti.alt = ''; ti.loading = 'lazy'; ti.decoding = 'async';
+      ti.style.objectPosition = pos;                                 // 썸네일도 같은 위치로 자르기
       ti.addEventListener('error', () => {                          // 파일이 없으면 그 칸만 숨김
         t.hidden = true;
         if (thumbs.filter((x) => !x.hidden).length < 2) thumbsEl.hidden = true;   // 남은 게 프로필 1장뿐이면 줄 전체 숨김
@@ -92,11 +97,12 @@
       img.classList.add('is-swapping');                              // 살짝 흐려졌다가 새 사진으로
       const next = new Image();
       next.onload = next.onerror = () => {
-        img.src = shots[i];
+        img.src = shots[i].src;
+        img.style.objectPosition = shots[i].pos;                     // 비워두면 가운데
         img.alt = `${m.name} 사진 ${i + 1}`;
         requestAnimationFrame(() => img.classList.remove('is-swapping'));
       };
-      next.src = shots[i];
+      next.src = shots[i].src;
     }
   }
 
