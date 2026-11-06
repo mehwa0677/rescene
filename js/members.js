@@ -41,7 +41,7 @@ const MEMBERS = [
     id: 'minami',
     name: 'MINAMI',
     photo: 'images/profile-02.jpg',
-    gallery: ['images/minami-01.jpg', {src:'images/minami-02.jpg',pos:'30%,50%'}, 'images/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/minami-01.jpg', {src:'images/minami-02.jpg',pos:'0%,50%'}, 'images/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ming',                      // ← 추가: 크게 보이는 이름
