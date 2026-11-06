@@ -72,7 +72,10 @@
       t.setAttribute('aria-pressed', String(i === 0));
       const ti = document.createElement('img');
       ti.src = src; ti.alt = ''; ti.loading = 'lazy'; ti.decoding = 'async';
-      ti.addEventListener('error', () => { t.hidden = true; });     // 파일이 없으면 그 칸만 숨김
+      ti.addEventListener('error', () => {                          // 파일이 없으면 그 칸만 숨김
+        t.hidden = true;
+        if (thumbs.filter((x) => !x.hidden).length < 2) thumbsEl.hidden = true;   // 남은 게 프로필 1장뿐이면 줄 전체 숨김
+      });
       t.appendChild(ti);
       t.addEventListener('click', () => show(i));
       thumbsEl.appendChild(t);

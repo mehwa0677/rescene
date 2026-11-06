@@ -856,3 +856,6 @@ strong, b { font-weight: 600; }
 @media (min-width: 861px) {
   .member-visual:has(.member-thumbs:not([hidden])) { width: min(100%, calc((100svh - 220px) / 1.42)); justify-self: center; align-self: start; }
 }
+/* 소개 갤러리 — 빈칸 없이 채우기, 정사각형 사진(product-07)은 모바일에서 한 줄 전체 */
+.gallery-grid { grid-auto-flow: row dense; }
+@media (max-width: 860px) { .gallery-grid .gallery-feature { grid-column: 1 / -1; aspect-ratio: 2000 / 1867 !important; } }
