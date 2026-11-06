@@ -16,7 +16,7 @@ const MEMBERS = [
     id: 'woni',
     name: 'WONI',
     photo: 'images/profile-01.jpg',
-    gallery: ['images/gallery/woni-01.jpg', 'images/gallery/woni-02.jpg', 'images/gallery/woni-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/woni-01.jpg', 'images/woni-02.jpg', 'images/woni-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Jota',                      // ← 추가: 크게 보이는 이름
@@ -37,7 +37,7 @@ const MEMBERS = [
     id: 'minami',
     name: 'MINAMI',
     photo: 'images/profile-02.jpg',
-    gallery: ['images/gallery/minami-01.jpg', 'images/gallery/minami-02.jpg', 'images/gallery/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/minami-01.jpg', 'images/minami-02.jpg', 'images/minami-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ming',                      // ← 추가: 크게 보이는 이름
@@ -58,7 +58,7 @@ const MEMBERS = [
     id: 'liv',
     name: 'LIV',
     photo: 'images/profile-03.jpg',
-    gallery: ['images/gallery/riv-01.jpg', 'images/gallery/riv-02.jpg', 'images/gallery/riv-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/liv-01.jpg', 'images/liv-02.jpg', 'images/liv-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ribbu',                      // ← 추가: 크게 보이는 이름
@@ -79,7 +79,7 @@ const MEMBERS = [
     id: 'may',
     name: 'MAY',
     photo: 'images/profile-04.jpg',
-    gallery: ['images/gallery/may-01.jpg', 'images/gallery/may-02.jpg', 'images/gallery/may-03.jpg'],// ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/may-01.jpg', 'images/may-02.jpg', 'images/may-03.jpg'],// ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Yam',                      // ← 추가: 크게 보이는 이름
@@ -100,7 +100,7 @@ const MEMBERS = [
     id: 'zena',
     name: 'ZENA',
     photo: 'images/profile-05.jpg',
-    gallery: ['images/gallery/zena-01.jpg', 'images/gallery/zena-02.jpg', 'images/gallery/zena-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
+    gallery: ['images/zena-01.jpg', 'images/zena-02.jpg', 'images/zena-03.jpg'], // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Zzeroming',                      // ← 추가: 크게 보이는 이름
