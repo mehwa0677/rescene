@@ -3,18 +3,18 @@
    색상은 :root 변수만 바꾸면 전체에 반영됩니다.
    ========================================================= */
 :root {
-  /* ---- Ethereal Guardian 테마 — 저채도 아이스 블루 · 펄 화이트 · 슬레이트 ----
+  /* ---- Ethereal Guardian 테마 — 미드나잇 네이비 · 아이스 블루 · 펄 화이트 ----
      향기 = 보이지 않게 곁에 머무는 것. 안개(헤이즈)와 빛번짐으로 표현합니다. */
-  --ground: #F5F7F9;          /* 기본 배경 (펄 화이트, 살짝 차가운 톤) */
-  --ground-2: #E9EEF2;        /* 구분 섹션 배경 (아이스 헤이즈) */
-  --ink: #232C35;             /* 본문 글자 (딥 슬레이트) */
-  --ink-soft: #4A5562;        /* 보조 글자 */
-  --muted: #5E6A77;           /* 흐린 글자 */
-  --line: rgba(84, 108, 132, .18);   /* 구분선 */
-  --accent: #546C84;          /* 포인트 색상 (더스티 스틸 블루) */
-  --accent-soft: #D3DDE6;     /* 연한 블루 그레이 (배경·장식용) */
-  --halo: #DCD9E8;            /* 라일락 그레이 빛번짐 (이미지 2의 보랏빛) */
-  --placeholder: #E4EAEF;     /* 이미지 자리 배경 */
+  --ground: #F3F6FA;          /* 기본 배경 (펄 화이트, 얼음빛) */
+  --ground-2: #E6EDF5;        /* 구분 섹션 배경 (아이스 헤이즈) */
+  --ink: #141E33;             /* 본문 글자 (미드나잇 네이비 — 프로필 사진의 어둠) */
+  --ink-soft: #3C4A63;        /* 보조 글자 */
+  --muted: #5B6880;           /* 흐린 글자 */
+  --line: rgba(62, 87, 133, .16);   /* 구분선 */
+  --accent: #3E5785;          /* 포인트 색상 (더스크 코발트 — 채도 낮춘 남청) */
+  --accent-soft: #CFDCEC;     /* 연한 블루 그레이 (배경·장식용) */
+  --halo: #DCD9EC;            /* 라일락 그레이 빛번짐 (이미지 2의 보랏빛) */
+  --placeholder: #E2E9F2;     /* 이미지 자리 배경 */
   --logo-filter: brightness(0) saturate(0) opacity(.86);  /* 핑크 로고 → 슬레이트 단색 */
 
   --f-en: 'Cormorant Garamond', 'Cormorant', 'Times New Roman', serif;
@@ -105,7 +105,7 @@ em { font-style: italic; }
 .ph::before {
   content: ''; position: absolute; inset: 0;
   background:
-    repeating-linear-gradient(135deg, rgba(84, 108, 132,.06) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(135deg, rgba(62, 87, 133,.06) 0 1px, transparent 1px 14px),
     radial-gradient(120% 90% at 30% 20%, #F7F9FB 0%, #DCE4EB 75%);
 }
 .ph::after {
@@ -187,14 +187,14 @@ em { font-style: italic; }
 .album { display: flex; flex-direction: column; gap: 10px; }
 .album-cover { aspect-ratio: 1 / 1; margin-bottom: 8px; transition: transform .6s var(--ease-out), box-shadow .6s var(--ease-out); }
 .album-cover::before, .album-cover .ph-media { transition: transform 1.2s var(--ease-out); }
-.album:hover .album-cover { transform: translateY(-6px); box-shadow: 0 24px 48px -24px rgba(84, 108, 132,.45); }
+.album:hover .album-cover { transform: translateY(-6px); box-shadow: 0 24px 48px -24px rgba(62, 87, 133,.45); }
 .album:hover .album-cover::before, .album:hover .album-cover .ph-media { transform: scale(1.05); }
 .album-title { margin: 0; font-family: var(--f-sans); font-size: 15px; font-weight: 500; line-height: 1.5; word-break: keep-all; }   /* 고딕체 */
 .album-date { margin: 0; font-size: 12px; letter-spacing: .12em; color: var(--muted); }
 
 /* ---------- QUOTE ---------- */
 .quote { min-height: 680px; display: flex; align-items: center; justify-content: center; }
-.quote-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(84, 108, 132,.35), rgba(35, 44, 53,.62)); }
+.quote-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(62, 87, 133,.35), rgba(20, 30, 51,.62)); }
 .quote blockquote { position: relative; z-index: 1; margin: 0; padding: 0 24px; max-width: 980px; text-align: center; display: flex; flex-direction: column; gap: 32px; align-items: center; }
 .quote blockquote p { margin: 0; font-size: clamp(36px, 5vw, 72px); line-height: 1.15; font-style: italic; font-weight: 400; }
 .quote cite { font-style: normal; font-size: 13px; letter-spacing: .28em; color: var(--accent); }
@@ -209,7 +209,7 @@ em { font-style: italic; }
 .contact-title em { color: var(--accent); }
 .field { display: flex; flex-direction: column; gap: 10px; }
 .field label { font-size: 12px; letter-spacing: .2em; color: var(--muted); }
-.field-row { display: flex; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid rgba(35, 44, 53,.28); padding-bottom: 10px; transition: border-color .3s; }
+.field-row { display: flex; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid rgba(20, 30, 51,.28); padding-bottom: 10px; transition: border-color .3s; }
 .field-row:focus-within { border-color: var(--accent); }
 .field input { flex: 1 1 220px; min-height: 48px; background: transparent; border: 0; outline: none; color: var(--ink); font: 300 18px var(--f-sans); }
 .field input::placeholder { color: #9AA5B0; }
@@ -357,7 +357,7 @@ em { font-style: italic; }
 .intro.is-snapping { transition: transform .5s var(--ease-out); }
 
 .intro-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-.intro-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(84, 108, 132,.10) 0%, rgba(84, 108, 132,.05) 45%, rgba(35, 44, 53,.55) 100%); pointer-events: none; }
+.intro-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(62, 87, 133,.10) 0%, rgba(62, 87, 133,.05) 45%, rgba(20, 30, 51,.55) 100%); pointer-events: none; }
 
 .intro-center {
   position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
@@ -402,12 +402,12 @@ em { font-style: italic; }
 .profile-table th, .profile-table td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; line-height: 1.7; }
 .profile-table th {
   width: 112px; white-space: nowrap;
-  background: rgba(84, 108, 132, .07);              /* 포인트 색을 옅게 */
+  background: rgba(62, 87, 133, .07);              /* 포인트 색을 옅게 */
   color: var(--accent); font-weight: 500; font-size: 13px; letter-spacing: .08em;
 }
 .profile-table td { color: var(--ink); word-break: keep-all; white-space: pre-line; }   /* \n 줄바꿈 반영 */
 .profile-table tr { transition: background .3s; }
-.profile-table tr:hover td { background: rgba(84, 108, 132, .04); }
+.profile-table tr:hover td { background: rgba(62, 87, 133, .04); }
 @media (max-width: 480px) {
   .profile-table th { width: 84px; padding: 14px 12px; }
   .profile-table td { padding: 14px 12px; font-size: 14px; }
@@ -431,7 +431,7 @@ strong, b { font-weight: 700; color: var(--ink); }
 .quote cite { color: var(--accent-soft); }
 
 /* 대문: 아이스 블루 그라데이션 + 흰 글자 (동영상이 없을 때도 보이도록) */
-.intro-active .intro, .intro.is-leaving { background: linear-gradient(170deg, #E6ECF1 0%, #AEBBC8 50%, #5D6B79 100%); }
+.intro-active .intro, .intro.is-leaving { background: radial-gradient(120% 90% at 50% 30%, #3A5078 0%, #16213A 60%, #0A1124 100%); }
 .intro-center, .intro-tag, .intro-logo .logo-text { color: #fff; }
 .intro-tag { color: rgba(255,255,255,.9); }
 .intro-enter { color: #fff; }
@@ -442,7 +442,7 @@ strong, b { font-weight: 700; color: var(--ink); }
 /* 멤버 흐름 띠·카드 등 아이스 헤이즈 포인트 */
 .collection { background: var(--ground-2); }
 .marquee { background: var(--ground-2); }
-.badge { box-shadow: 0 10px 30px -12px rgba(84, 108, 132,.35); }
+.badge { box-shadow: 0 10px 30px -12px rgba(62, 87, 133,.35); }
 
 /* =========================================================
    ABOUT PAGE (about.html) — 리센느 소개
@@ -460,7 +460,7 @@ html.lp-lock { overflow: hidden; }
 /* 배경 어둡게 */
 .lp-backdrop {
   position: fixed; inset: 0; z-index: 89;
-  background: rgba(35, 44, 53, .35); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+  background: rgba(20, 30, 51, .35); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
   opacity: 0; pointer-events: none; transition: opacity .5s ease;
 }
 .lp.is-open .lp-backdrop { opacity: 1; pointer-events: auto; }
@@ -477,7 +477,7 @@ html.lp-lock { overflow: hidden; }
 }
 /* 곡이 많아 패널이 길어져도 커버·LP 영역이 줄어들지 않게 (줄어들면 커버가 앨범 제목을 덮음) */
 .lp-panel > * { flex-shrink: 0; }
-.lp.is-open .lp-panel { transform: none; visibility: visible; transition: transform .7s var(--ease-io), visibility 0s, box-shadow .7s; box-shadow: -24px 0 60px -30px rgba(84, 108, 132, .45); }
+.lp.is-open .lp-panel { transform: none; visibility: visible; transition: transform .7s var(--ease-io), visibility 0s, box-shadow .7s; box-shadow: -24px 0 60px -30px rgba(62, 87, 133, .45); }
 .lp-close {
   align-self: flex-end; width: 44px; height: 44px; display: grid; place-items: center;
   background: none; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); cursor: pointer;
@@ -490,7 +490,7 @@ html.lp-lock { overflow: hidden; }
 .lp-sleeve {
   position: absolute; left: 0; top: 0; z-index: 2; width: var(--sz); height: var(--sz); overflow: hidden;
   background: linear-gradient(135deg, #C9D4DE, var(--accent));
-  box-shadow: 0 22px 40px -20px rgba(84, 108, 132, .6);
+  box-shadow: 0 22px 40px -20px rgba(62, 87, 133, .6);
 }
 .lp-sleeve-img, .lp-label-img, .lp-mini-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -549,7 +549,7 @@ html.lp-lock { overflow: hidden; }
 .lp-btn { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 0; background: none; color: var(--ink); cursor: pointer; }
 .lp-btn svg { width: 20px; height: 20px; }
 .lp-btn:hover { color: var(--accent); }
-.lp-play { width: 56px; height: 56px; background: var(--accent); color: #fff; box-shadow: 0 10px 22px -10px rgba(84, 108, 132, .8); }
+.lp-play { width: 56px; height: 56px; background: var(--accent); color: #fff; box-shadow: 0 10px 22px -10px rgba(62, 87, 133, .8); }
 .lp-play:hover { background: var(--ink); color: #fff; }
 .lp-play svg { width: 24px; height: 24px; }
 .lp-status { margin: 0; font-size: 12px; color: var(--accent); word-break: break-all; }
@@ -597,7 +597,7 @@ html.lp-lock { overflow: hidden; }
   display: none; align-items: center; gap: 12px; max-width: min(260px, calc(100vw - 40px));
   min-height: 56px; padding: 6px 18px 6px 6px; border-radius: 999px;
   background: rgba(255, 255, 255, .92); border: 1px solid var(--line); cursor: pointer;
-  box-shadow: 0 16px 36px -18px rgba(84, 108, 132, .6); backdrop-filter: blur(10px);
+  box-shadow: 0 16px 36px -18px rgba(62, 87, 133, .6); backdrop-filter: blur(10px);
   animation: fadeUp .6s var(--ease-out) both;
 }
 .lp.has-track:not(.is-open) .lp-mini { display: inline-flex; }
@@ -672,7 +672,7 @@ html.lp-lock { overflow: hidden; }
   transition: border-color .3s, box-shadow .3s;
 }
 .gb-row input::placeholder { color: #9AA5B0; }
-.gb-row input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(84, 108, 132, .12); }
+.gb-row input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(62, 87, 133, .12); }
 .gb-name { flex: 0 1 150px; min-width: 0; }
 .gb-msg { flex: 1 1 260px; min-width: 0; }
 .gb-submit:disabled { opacity: .6; cursor: wait; }
@@ -732,7 +732,7 @@ html.lp-lock { overflow: hidden; }
 body {
   background:
     radial-gradient(60vw 50vw at 88% -6%, rgba(220, 217, 232, .55), transparent 70%),   /* 라일락 빛번짐 */
-    radial-gradient(55vw 45vw at -8% 38%, rgba(200, 214, 226, .45), transparent 70%),   /* 아이스 블루 안개 */
+    radial-gradient(55vw 45vw at -8% 38%, rgba(196, 222, 242, .45), transparent 70%),   /* 아이스 블루 안개 */
     var(--ground);
   background-attachment: fixed;
 }
@@ -753,8 +753,8 @@ strong, b { font-weight: 600; }
 
 /* 버튼 — 꽉 찬 색 대신 반투명 유리 + 빛 */
 .btn { font-weight: 400; letter-spacing: .1em; }
-.btn-solid { background: var(--ink); box-shadow: 0 10px 28px -14px rgba(35, 44, 53, .55); }
-.btn-solid:hover { background: var(--accent); box-shadow: 0 12px 32px -10px rgba(84, 108, 132, .6); }
+.btn-solid { background: var(--ink); box-shadow: 0 10px 28px -14px rgba(20, 30, 51, .55); }
+.btn-solid:hover { background: var(--accent); box-shadow: 0 12px 32px -10px rgba(62, 87, 133, .6); }
 .btn-ghost { background: rgba(255, 255, 255, .45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 
 /* 헤더 — 반투명 안개 유리 */
@@ -769,22 +769,22 @@ strong, b { font-weight: 600; }
   filter: blur(24px);
 }
 .hero-img, .story > .ph, .card .ph, .album-cover, .member-photo, .about-photo, .gallery-grid figure {
-  box-shadow: 0 30px 60px -36px rgba(35, 44, 53, .35);
+  box-shadow: 0 30px 60px -36px rgba(20, 30, 51, .35);
 }
-.album:hover .album-cover { box-shadow: 0 28px 56px -24px rgba(84, 108, 132, .5), 0 0 0 1px rgba(255, 255, 255, .6); }
-.badge { background: rgba(250, 251, 252, .9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 0 1px rgba(255,255,255,.8), 0 16px 40px -16px rgba(84, 108, 132, .45); }
+.album:hover .album-cover { box-shadow: 0 28px 56px -24px rgba(62, 87, 133, .5), 0 0 0 1px rgba(255, 255, 255, .6); }
+.badge { background: rgba(250, 251, 252, .9); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 0 1px rgba(255,255,255,.8), 0 16px 40px -16px rgba(62, 87, 133, .45); }
 
 /* 구분 띠 — 위아래로 흐려지는 안개 */
 .marquee { background: linear-gradient(180deg, rgba(233, 238, 242, .4), var(--ground-2) 50%, rgba(233, 238, 242, .4)); }
 .collection { background: linear-gradient(180deg, var(--ground) 0%, var(--ground-2) 18%, var(--ground-2) 82%, var(--ground) 100%); }
 
 /* 인용문 — 차가운 새벽빛 */
-.quote-shade { background: linear-gradient(180deg, rgba(210, 222, 232, .28), rgba(35, 44, 53, .66)); }
+.quote-shade { background: linear-gradient(180deg, rgba(210, 222, 232, .28), rgba(20, 30, 51, .66)); }
 
 /* 대문 — 로고를 흰 빛으로 */
 .intro-logo .logo-img { filter: brightness(0) invert(1) drop-shadow(0 0 18px rgba(255, 255, 255, .55)); }
-.intro-tag { font-size: clamp(18px, 2vw, 26px); letter-spacing: .04em; text-shadow: 0 1px 14px rgba(35, 44, 53, .35); }
-.intro-shade { background: linear-gradient(180deg, rgba(220, 228, 236, .18) 0%, rgba(200, 212, 224, .08) 45%, rgba(35, 44, 53, .55) 100%); }
+.intro-tag { font-size: clamp(18px, 2vw, 26px); letter-spacing: .04em; text-shadow: 0 1px 14px rgba(20, 30, 51, .35); }
+.intro-shade { background: linear-gradient(180deg, rgba(220, 228, 236, .18) 0%, rgba(200, 212, 224, .08) 45%, rgba(20, 30, 51, .55) 100%); }
 
 /* 방명록 */
 .gb-board { background: rgba(255, 255, 255, .55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
@@ -792,18 +792,37 @@ strong, b { font-weight: 600; }
 .gb-avatar { background: linear-gradient(140deg, #EEF2F6, var(--accent-soft)); }
 
 /* LP 플레이어 */
-.lp-sleeve, .lp-label { background: linear-gradient(135deg, #DDE4EB, var(--accent)); }
+.lp-sleeve, .lp-label { background: linear-gradient(135deg, #BFD9EE, var(--accent) 60%, var(--ink)); }
 .lp-play { background: var(--ink); }
 .lp-play:hover { background: var(--accent); }
 .lp-mini { background: rgba(250, 251, 252, .9); }
 /* 대문 사운드 버튼 — 밝은 영상 위에서도 보이도록 */
-.intro-sound { background: rgba(35, 44, 53, .28); border-color: rgba(255, 255, 255, .7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.intro-sound { background: rgba(20, 30, 51, .28); border-color: rgba(255, 255, 255, .7); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 /* 밝은 화보(흰 의상·푸른 안개)가 배경에 녹아 경계가 사라지지 않도록 얇은 테두리 */
-.hero-img, .story > .ph, .card .ph, .member-photo, .about-photo, .gallery-grid figure { outline: 1px solid rgba(84, 108, 132, .12); outline-offset: -1px; }
+.hero-img, .story > .ph, .card .ph, .member-photo, .about-photo, .gallery-grid figure { outline: 1px solid rgba(62, 87, 133, .12); outline-offset: -1px; }
 /* 인용문 — 밝은 레이스·흰 배경 위에서도 글자가 읽히도록 가운데를 한 겹 더 어둡게 */
 .quote-shade {
   background:
-    radial-gradient(70% 55% at 50% 50%, rgba(30, 38, 47, .38), transparent 75%),
-    linear-gradient(180deg, rgba(210, 222, 232, .22), rgba(35, 44, 53, .62));
+    radial-gradient(70% 55% at 50% 50%, rgba(14, 22, 42, .38), transparent 75%),
+    linear-gradient(180deg, rgba(210, 222, 232, .22), rgba(20, 30, 51, .62));
 }
-.quote blockquote p { text-shadow: 0 2px 24px rgba(20, 26, 33, .35); }
+.quote blockquote p { text-shadow: 0 2px 24px rgba(10, 16, 32, .35); }
+
+/* =========================================================
+   새 화보 기준 보정 (프로필: 미드나잇 네이비 + 아이스 하이라이트)
+   ========================================================= */
+/* 버튼 — 네이비 바탕에 얼음빛 하이라이트 */
+.btn-solid { background: linear-gradient(160deg, #24365A, var(--ink)); }
+.btn-solid:hover { background: linear-gradient(160deg, #4A6496, var(--accent)); }
+.hero-title em, .contact-title em, .h2-en em { color: var(--accent); }
+
+/* 사진 그림자 — 남색 계열로 (회색 그림자는 푸른 사진 옆에서 탁해 보임) */
+.album:hover .album-cover { box-shadow: 0 28px 56px -24px rgba(62, 87, 133, .55), 0 0 0 1px rgba(255, 255, 255, .6); }
+
+/* 하단 — 프로필 사진의 깊은 어둠을 받아 한 번 가라앉히기 */
+.footer { background: linear-gradient(180deg, #121C31, #0B1325); border-top: 0; color: #C9D6E8; }
+.footer .footer-col, .footer .footer-col a, .footer .footer-sns a, .footer .footer-bottom, .footer .footer-bottom a, .footer .footer-brand { color: #9FB0C8; }
+.footer .footer-col a:hover, .footer .footer-sns a:hover, .footer .footer-bottom a:hover, .footer .footer-brand:hover { color: #FFFFFF; }
+.footer .footer-label { color: #8EA2C0; }
+.footer .logo-img { filter: brightness(0) invert(1) opacity(.92); }
+.footer .logo-text { color: #F3F6FA; }
