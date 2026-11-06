@@ -2,12 +2,21 @@
    멤버 정보 — 이 파일만 고치면 멤버 상세 페이지 내용이 바뀝니다.
    [대괄호] 부분을 실제 정보로 바꿔주세요.
    ※ 글 안에 작은따옴표(')를 쓰려면 \' 처럼 앞에 역슬래시를 붙이세요.
+
+   📷 사진 더 보기 (gallery)
+   · 큰 사진 아래 썸네일로 보이고, 누르면 큰 사진이 그 사진으로 바뀝니다.
+   · 첫 번째 썸네일은 항상 프로필 사진(photo)이라 따로 적지 않아도 됩니다.
+   · 사진은 images/gallery/ 폴더에 올리고, 아래처럼 파일 경로를 쉼표로 이어 적으세요.
+       gallery: ['images/gallery/woni-01.jpg', 'images/gallery/woni-02.jpg'],
+   · 비워두면 [] 썸네일 줄이 나타나지 않습니다. 파일이 없거나 이름이 틀리면 그 칸만 숨겨집니다.
+   · 사진은 긴 쪽 1600px 이하로 줄여서 올려주세요 (장당 300KB 안팎).
    ========================================================= */
 const MEMBERS = [
   {
     id: 'woni',
     name: 'WONI',
     photo: 'images/profile-01.jpg',
+    gallery: [],                          // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Jota',                      // ← 추가: 크게 보이는 이름
@@ -28,6 +37,7 @@ const MEMBERS = [
     id: 'minami',
     name: 'MINAMI',
     photo: 'images/profile-02.jpg',
+    gallery: [],                          // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ming',                      // ← 추가: 크게 보이는 이름
@@ -48,6 +58,7 @@ const MEMBERS = [
     id: 'liv',
     name: 'LIV',
     photo: 'images/profile-03.jpg',
+    gallery: [],                          // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Ribbu',                      // ← 추가: 크게 보이는 이름
@@ -68,6 +79,7 @@ const MEMBERS = [
     id: 'may',
     name: 'MAY',
     photo: 'images/profile-04.jpg',
+    gallery: [],                          // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Yam',                      // ← 추가: 크게 보이는 이름
@@ -88,6 +100,7 @@ const MEMBERS = [
     id: 'zena',
     name: 'ZENA',
     photo: 'images/profile-05.jpg',
+    gallery: [],                          // ← 사진 더 보기 (위 설명 참고)
     // 캐릭터 — 사진을 클릭하면 보이는 이미지와 표
     character: {
       title: 'Zzeroming',                      // ← 추가: 크게 보이는 이름
